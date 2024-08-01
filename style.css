@@ -1,0 +1,201 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.checklist-container {
+    background: #fff;
+    padding: 30px 50px; /* Increased padding for more space */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly more shadow for emphasis */
+    width: 1000px; /* Increased width for more space */
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 28px; /* Larger font size for better readability */
+    color: #333;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Full width of the container */
+}
+
+.carousel-item {
+    width: 100%; /* Full width of the carousel */
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Increased gap for better spacing */
+    margin-bottom: 25px; /* Increased margin for separation */
+    text-align: left;
+    width: 100%; /* Full width of the carousel item */
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dddddd;
+    padding: 10px; /* Increased padding for better spacing */
+    border-radius: 8px; /* Slightly larger border radius for a softer look */
+    background-color: #ffffff;
+    height: auto;
+    justify-content: space-between;
+    width: 100%; /* Full width of the checklist container */
+    box-sizing: border-box;
+    page-break-inside: avoid; /* Prevent breaking inside item */
+}
+
+.item span {
+    font-weight: bold;
+    color: #333;
+    flex: 1; /* Allow span to take up available space */
+    text-align: left; /* Align text to the left */
+    margin-right: 30px; /* Added margin for more space between item name and options */
+}
+
+.options {
+    display: flex;
+    gap: 15px; /* Increased gap for better spacing */
+    flex-wrap: wrap;
+    align-items: center;
+    width: auto; /* Adjusted to fit content */
+    box-sizing: border-box;
+}
+
+.options label {
+    font-size: 16px; /* Slightly larger font size for better readability */
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.options input[type="checkbox"] {
+    margin-right: 10px; /* Increased margin for better spacing */
+}
+
+.options input.comment {
+    width: 350px; /* Increased width for longer comments */
+    padding: 10px; /* Increased padding for better appearance */
+    border: 1px solid #cccccc;
+    border-radius: 5px; /* Increased border radius for a smoother look */
+    font-size: 16px; /* Slightly larger font size for better readability */
+    box-sizing: border-box;
+    margin-left: 15px; /* Increased margin for better spacing */
+}
+
+#convert-pdf, #gather-all {
+    display: block;
+    margin: 25px auto 0; /* Increased margin for better spacing */
+    padding: 15px 30px; /* Increased padding for better appearance */
+    background-color: #00aaff; /* Updated to a more attractive blue */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Larger border radius for a softer look */
+    cursor: pointer;
+    font-size: 18px; /* Increased font size for better readability */
+}
+
+#convert-pdf:hover, #gather-all:hover {
+    background-color: #0088cc; /* Darker shade for hover effect */
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between; /* Space out buttons evenly */
+    margin: 30px 0; /* Increased margin for vertical spacing */
+    width: 100%; /* Full width of the container */
+    box-sizing: border-box;
+}
+
+.carousel-controls button {
+    padding: 15px 30px; /* Padding for button appearance */
+    background-color: #00aaff; /* Blue color for buttons */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px; /* Font size for button text */
+}
+
+.carousel-controls button:hover {
+    background-color: #0088cc; /* Darker shade on hover */
+}
+
+/* PDF specific styles */
+.pdf-checklist {
+    margin: 0 auto; /* Center horizontally */
+    width: 100%; /* Ensure the width fits the page */
+    page-break-inside: avoid; /* Prevent breaking items inside the page */
+    background: #fff; /* Ensure background color is white */
+    box-sizing: border-box; /* Ensure box sizing is consistent */
+    padding: 20px; /* Add padding to content */
+}
+
+.pdf-checklist h1 {
+    text-align: center; /* Center the titles */
+    font-size: 25px; /* Keep font size consistent */
+    color: #333; /* Title color */
+    margin-bottom: 20px; /* Margin below title */
+}
+
+.pdf-checklist .item.chosen {
+    background-color: #ffffff; /* Keep background color white */
+    color: #333; /* Text color */
+    padding: 12px; /* Increased padding for better appearance */
+    border-radius: 8px; /* Larger border radius for a smoother look */
+    page-break-inside: avoid; /* Prevent breaking inside chosen item */
+}
+
+.pdf-checklist .options {
+    display: flex;
+    gap: 15px; /* Increased gap for better spacing */
+    align-items: center;
+    width: 100%; /* Ensure options take full width */
+    box-sizing: border-box;
+    page-break-inside: avoid; /* Prevent breaking inside options */
+}
+
+.pdf-checklist .options label {
+    margin-right: 15px; /* Increased margin for better spacing */
+}
+
+.pdf-checklist .options input.comment {
+    width: 100%; /* Ensure comment input takes full width */
+    padding: 12px; /* Increased padding for better appearance */
+    box-sizing: border-box;
+    margin-left: 0; /* Align horizontally */
+}
+
+.pdf-checklist .comment-box {
+    background-color: #ffffff; /* White background color */
+    padding: 10px; /* Padding inside the comment box */
+    border-radius: 5px; /* Rounded corners for the comment box */
+    margin-top: 10px; /* Margin above the comment box */
+    font-size: 14px; /* Font size for the comment text */
+    box-sizing: border-box;
+    border: 1px solid #cccccc; /* Light gray border */
+    page-break-inside: avoid; /* Prevent breaking inside comment box */
+}
+
+.pdf-checklist .pdf-title {
+    font-size: 18px; /* Adjust font size for specific titles */
+}
