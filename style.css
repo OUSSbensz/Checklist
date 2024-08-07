@@ -44,8 +44,8 @@ h1 {
 .checklist {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Increased gap for better spacing */
-    margin-bottom: 25px; /* Increased margin for separation */
+    gap: 8px; /* Reduced gap for closer spacing */
+    margin-bottom: 15px; /* Reduced margin for closer spacing */
     text-align: left;
     width: 100%; /* Full width of the carousel item */
 }
@@ -54,7 +54,7 @@ h1 {
     display: flex;
     align-items: center;
     border: 1px solid #dddddd;
-    padding: 10px; /* Increased padding for better spacing */
+    padding: 8px; /* Reduced padding for closer spacing */
     border-radius: 8px; /* Slightly larger border radius for a softer look */
     background-color: #ffffff;
     height: auto;
@@ -69,12 +69,12 @@ h1 {
     color: #333;
     flex: 1; /* Allow span to take up available space */
     text-align: left; /* Align text to the left */
-    margin-right: 30px; /* Added margin for more space between item name and options */
+    margin-right: 20px; /* Reduced margin for closer spacing */
 }
 
 .options {
     display: flex;
-    gap: 15px; /* Increased gap for better spacing */
+    gap: 10px; /* Reduced gap for closer spacing */
     flex-wrap: wrap;
     align-items: center;
     width: auto; /* Adjusted to fit content */
@@ -89,23 +89,27 @@ h1 {
 }
 
 .options input[type="checkbox"] {
-    margin-right: 10px; /* Increased margin for better spacing */
+    margin-right: 8px; /* Reduced margin for closer spacing */
+}
+
+.options input[type="radio"] {
+    margin-right: 8px; /* Reduced margin for closer spacing */
 }
 
 .options input.comment {
     width: 350px; /* Increased width for longer comments */
-    padding: 10px; /* Increased padding for better appearance */
+    padding: 8px; /* Reduced padding for closer spacing */
     border: 1px solid #cccccc;
     border-radius: 5px; /* Increased border radius for a smoother look */
     font-size: 16px; /* Slightly larger font size for better readability */
     box-sizing: border-box;
-    margin-left: 15px; /* Increased margin for better spacing */
+    margin-left: 10px; /* Reduced margin for closer spacing */
 }
 
 #convert-pdf, #gather-all {
     display: block;
-    margin: 25px auto 0; /* Increased margin for better spacing */
-    padding: 15px 30px; /* Increased padding for better appearance */
+    margin: 20px auto 0; /* Reduced margin for closer spacing */
+    padding: 12px 25px; /* Reduced padding for better appearance */
     background-color: #00aaff; /* Updated to a more attractive blue */
     color: white;
     border: none;
@@ -121,13 +125,13 @@ h1 {
 .carousel-controls {
     display: flex;
     justify-content: space-between; /* Space out buttons evenly */
-    margin: 30px 0; /* Increased margin for vertical spacing */
+    margin: 20px 0; /* Reduced margin for vertical spacing */
     width: 100%; /* Full width of the container */
     box-sizing: border-box;
 }
 
 .carousel-controls button {
-    padding: 15px 30px; /* Padding for button appearance */
+    padding: 12px 25px; /* Reduced padding for button appearance */
     background-color: #00aaff; /* Blue color for buttons */
     color: white;
     border: none;
@@ -140,6 +144,7 @@ h1 {
     background-color: #0088cc; /* Darker shade on hover */
 }
 
+
 /* PDF specific styles */
 .pdf-checklist {
     margin: 0 auto; /* Center horizontally */
@@ -147,55 +152,365 @@ h1 {
     page-break-inside: avoid; /* Prevent breaking items inside the page */
     background: #fff; /* Ensure background color is white */
     box-sizing: border-box; /* Ensure box sizing is consistent */
-    padding: 20px; /* Add padding to content */
+    padding: 15px; /* Adjust padding to fit more content */
+}
+
+.pdf-title {
+    font-size: 18px; /* Set font size for titles */
+    color: #333; /* Title color */
+    margin-bottom: 10px; /* Adjust margin below title */
+    text-align: center; /* Center titles */
 }
 
 .pdf-checklist h1 {
-    text-align: center; /* Center the titles */
-    font-size: 25px; /* Keep font size consistent */
-    color: #333; /* Title color */
-    margin-bottom: 20px; /* Margin below title */
+    text-align: center; /* Center the main titles */
+    font-size: 16px; /* Set font size for main titles */
+    color: #333; /* Main title color */
+    margin-bottom: 10px; /* Adjust margin below main titles */
 }
 
-.pdf-checklist .item.chosen {
-    background-color: #ffffff; /* Keep background color white */
-    color: #333; /* Text color */
-    padding: 12px; /* Increased padding for better appearance */
-    border-radius: 8px; /* Larger border radius for a smoother look */
-    page-break-inside: avoid; /* Prevent breaking inside chosen item */
+.pdf-checklist table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
 }
 
-.pdf-checklist .options {
-    display: flex;
-    gap: 15px; /* Increased gap for better spacing */
-    align-items: center;
-    width: 100%; /* Ensure options take full width */
-    box-sizing: border-box;
-    page-break-inside: avoid; /* Prevent breaking inside options */
+.pdf-checklist th, .pdf-checklist td {
+    border: 1px solid #cccccc;
+    padding: 2px; /* Reduce padding to save space */
+    text-align: center;
+    font-size: 8px; /* Reduce font size for table content */
 }
 
-.pdf-checklist .options label {
-    margin-right: 15px; /* Increased margin for better spacing */
+.pdf-checklist th {
+    background-color: #f2f2f2;
+    font-weight: bold;
 }
 
-.pdf-checklist .options input.comment {
-    width: 100%; /* Ensure comment input takes full width */
-    padding: 12px; /* Increased padding for better appearance */
-    box-sizing: border-box;
-    margin-left: 0; /* Align horizontally */
+.pdf-checklist .item-row {
+    page-break-inside: avoid; /* Prevent breaking inside table rows */
 }
 
 .pdf-checklist .comment-box {
     background-color: #ffffff; /* White background color */
-    padding: 10px; /* Padding inside the comment box */
-    border-radius: 5px; /* Rounded corners for the comment box */
-    margin-top: 10px; /* Margin above the comment box */
-    font-size: 14px; /* Font size for the comment text */
+    padding: 8px; /* Reduce padding inside the comment box */
+    border-radius: 4px; /* Slightly smaller border-radius */
+    margin-top: 8px; /* Adjust margin above the comment box */
+    font-size: 10px; /* Reduce font size for the comment text */
     box-sizing: border-box;
     border: 1px solid #cccccc; /* Light gray border */
     page-break-inside: avoid; /* Prevent breaking inside comment box */
 }
 
-.pdf-checklist .pdf-title {
-    font-size: 18px; /* Adjust font size for specific titles */
+.pdf-checklist .checklist .item {
+    font-size: 10px; /* Reduce font size for item text */
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: space-between; /* Space out the text and options */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 2px; /* Adjust margin between items */
 }
+
+.pdf-checklist .checklist .item span {
+    flex: 1; /* Ensure item text takes available space */
+}
+
+.pdf-checklist .checklist .options {
+    display: flex; /* Use flexbox for options */
+    justify-content: flex-end; /* Align options to the left */
+    align-items: flex-start; /* Align options vertically to the top */
+    gap: 3px; /* Reduce space between options */
+}
+
+.pdf-checklist .checklist .options label {
+    font-size: 10px; /* Reduce font size for labels */
+    margin-right: 2px; /* Reduce margin between labels */
+    margin-top: 2px; /* Adjust margin to align vertically */
+}
+
+.pdf-checklist .checklist .options input[type="checkbox"] {
+    transform: scale(0.8); /* Reduce the size of checkboxes */
+    margin-right: 2px; /* Reduce margin between checkbox and label */
+    margin-top: 2px; /* Adjust margin to align vertically */
+}
+
+.pdf-checklist .checklist .options input[type="text"] {
+    font-size: 8px; /* Reduce font size for text input */
+    padding: 2px; /* Adjust padding for text input */
+    margin-left: 2px; /* Reduce margin between text input and other elements */
+}
+
+
+
+/* Findings Section Styles */
+.findings-section {
+    margin-top: 20px; /* Margin above the findings section */
+    padding: 10px; /* Padding inside the findings section */
+    border-top: 2px solid #333; /* Top border to separate from the checklist */
+}
+
+.findings-section h2 {
+    font-size: 20px; /* Font size for findings title */
+    color: #333; /* Title color */
+    margin-bottom: 10px; /* Margin below the title */
+}
+
+.findings-section ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.findings-section li {
+    font-size: 14px; /* Font size for findings items */
+    margin-bottom: 5px; /* Margin between items */
+    line-height: 1.5; /* Line height for readability */
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: space-between; /* Space out the text and options */
+}
+
+.findings-section .item-text {
+    flex: 1; /* Ensure item text takes available space */
+    margin-right: 10px; /* Add space between item text and CAT label */
+}
+
+.findings-section .cat {
+    margin-left: auto; /* Push CAT label to the right */
+}
+
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Fade-out effect */
+body.fade-out {
+    opacity: 0;
+}
+
+/* Container for the form */
+.container {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 700px;
+    margin: auto;
+    text-align: left;
+}
+
+/* Form header */
+.container h1 {
+    margin: 0 0 20px 0;
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+}
+
+/* Form group styles */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+    outline: none;
+}
+
+/* Submit button styles */
+button[type="button"] {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 24px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="button"]:hover {
+    background-color: #0088cc;
+    transform: translateY(-2px);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .container h1 {
+        font-size: 22px;
+    }
+
+    .form-group input {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    button[type="button"] {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Styles for select dropdowns */
+.form-group select {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 10px; /* Space between select menu and other elements */
+}
+
+
+.form-group select:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+    outline: none;
+}
+
+/* Manage options styles */
+.manage-options {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 5px; /* Space between elements */
+}
+
+.manage-options input {
+    flex: 1; /* Allow input to grow and take available space */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-right: 10px; /* Space between input and buttons */
+    height: 40px; /* Explicit height for consistent sizing */
+}
+
+.manage-options button {
+    padding: 8px 15px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-left: 5px; /* Space between buttons */
+    height: 40px; /* Match the input height */
+}
+
+.manage-options button:hover {
+    background-color: #0088cc;
+}
+
+
+/* Authentification */
+
+.form-group {
+    margin-bottom: 20px; /* Ajuster si nécessaire */
+}
+
+.auth-section {
+    margin-top: 0; /* Réduit la marge supérieure pour monter la section */
+    display: flex;
+    align-items: center;
+}
+
+.auth-section label {
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: -30px;
+    font-size: 14px ;
+
+}
+
+.auth-section input {
+    margin-right: 10px;
+    margin-top: -15px;
+}
+
+.auth-section input[type="password"] {
+    margin: 0;  /* Supprimer les marges pour aligner mieux */
+    padding: 5px;  /* Ajuster le padding pour l'apparence */
+    border: 1px solid #ccc;  /* Réduire l'épaisseur de la bordure */
+    border-radius: 3px;  /* Ajuster le rayon des bordures si nécessaire */
+    margin-top: -30px;
+
+}
+
+.auth-section .submit-btn {
+    padding: 5px 5px;  /* Ajuster les padding pour le bouton */
+    font-size: 12px;
+    background-color: #4cacaf;
+    color: white;
+    cursor: pointer;
+    margin: 5px;  /* Supprimer la marge pour aligner avec le champ de mot de passe */
+    margin-top: -10px;
+
+}
+
+.auth-section .submit-btn:hover {
+    background-color: #458ba0;
+}
+
