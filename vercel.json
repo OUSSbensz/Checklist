@@ -20,8 +20,24 @@
       "dest": "/Page.html"
     },
     {
+      "src": "/Page.html",
+      "dest": "/Page.html"
+    },
+    {
       "src": "/index.html",
       "dest": "/index.html"
+    },
+    {
+      "src": "/style.css",
+      "dest": "/style.css"
+    },
+    {
+      "src": "/script.js",
+      "dest": "/script.js"
+    },
+    {
+      "src": "/script2.js",
+      "dest": "/script2.js"
     }
   ]
 }
