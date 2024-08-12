@@ -300,6 +300,36 @@ window.onload = function () {
             });
         });
     }
+
+        // Sélectionnez tous les groupes d'options
+        const optionGroups = document.querySelectorAll('.options');
+
+        optionGroups.forEach(group => {
+            const cat1 = group.querySelector('.cat1');
+            const cat2 = group.querySelector('.cat2');
+            const cat3 = group.querySelector('.cat3');
+    
+            // Fonction pour décocher les autres cases
+            function handleCatCheckboxChange() {
+                if (this.checked) {
+                    if (this.classList.contains('cat1')) {
+                        cat2.checked = false;
+                        cat3.checked = false;
+                    } else if (this.classList.contains('cat2')) {
+                        cat1.checked = false;
+                        cat3.checked = false;
+                    } else if (this.classList.contains('cat3')) {
+                        cat1.checked = false;
+                        cat2.checked = false;
+                    }
+                }
+            }
+    
+            // Ajoutez des écouteurs d'événements pour les cases à cocher
+            cat1.addEventListener('change', handleCatCheckboxChange);
+            cat2.addEventListener('change', handleCatCheckboxChange);
+            cat3.addEventListener('change', handleCatCheckboxChange);
+        });
     
  
 
@@ -309,6 +339,10 @@ window.onload = function () {
     initSpecialCheckboxes(); // Initialize special checkboxes
 
 };
+
+
+
+
 
 
 

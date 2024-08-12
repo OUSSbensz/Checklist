@@ -514,3 +514,21 @@ button[type="button"]:hover {
     background-color: #458ba0;
 }
 
+
+
+/* Logo */
+
+h1 {
+    
+    align-items: center; /* Center-aligns the text and logo vertically */
+   
+  }
+  
+  .logo {
+    width: 85px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between the logo and the text */
+    vertical-align: middle; /* Ensure logo is vertically aligned with the text */
+  }
+  
+
