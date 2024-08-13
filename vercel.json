@@ -1,43 +1,9 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.js",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/Page.html"
-    },
-    {
-      "src": "/Page.html",
-      "dest": "/Page.html"
-    },
-    {
-      "src": "/index.html",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/style.css",
-      "dest": "/style.css"
-    },
-    {
-      "src": "/script.js",
-      "dest": "/script.js"
-    },
-    {
-      "src": "/script2.js",
-      "dest": "/script2.js"
-    }
-  ]
+    "redirects": [
+      { "source": "/", "destination": "/Page.html", "permanent": true }
+    ],
+    "rewrites": [
+      { "source": "/index", "destination": "/Index.html" }
+    ]
 }
+  
