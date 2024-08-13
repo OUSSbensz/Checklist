@@ -537,7 +537,7 @@ h1 {
 /* Style for the orientation message */
 .orientation-message {
     display: none; /* Hidden by default */
-    background-color: #ffcc00;
+    background-color: #ff0044f5;
     color: #333;
     text-align: center;
     padding: 15px;
