@@ -534,7 +534,9 @@ h1 {
 
   
   
+  
 /* Style for the orientation message */
+
 .orientation-message {
     display: none; /* Hidden by default */
     background-color: #ff0044f5;
@@ -562,4 +564,24 @@ h1 {
         display: none;
     }
 }
+
+/* Style pour l'alignement des boutons radio sur mobile */
+@media only screen and (max-width: 600px) {
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Espacement entre les boutons radio */
+    }
+
+    /* Alignement des labels */
+    .radio-group label {
+        display: flex;
+        align-items: center;
+    }
+
+    .radio-group input[type="radio"] {
+        margin-right: 8px; /* Espace entre le bouton radio et le label */
+    }
+}
+
 
