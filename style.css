@@ -532,34 +532,18 @@ h1 {
   }
 
 
+
   
-  
+
 /* Mobile-specific styles */
 @media only screen and (max-width: 600px) {
-    .form-group {
-        padding: 15px;
+    .inspection-title {
+        font-size: 18px; /* Reduce title size for mobile */
+        margin: 10px 0;  /* Reduce space above and below the title */
     }
 
-    label[for="psychoactive-test"] {
-        font-size: 18px;
-        margin-bottom: 10px;
-        display: block;
-    }
-
-    .radio-group {
-        display: flex;
-        flex-direction: column;
-        gap: 15px; /* Add space between the radio buttons */
-        margin-top: 10px;
-    }
-
-    .radio-group label {
-        font-size: 16px; /* Slightly larger for better readability on mobile */
-        display: flex;
-        align-items: center;
-    }
-
-    .radio-group input[type="radio"] {
-        margin-right: 10px;
+    .logo {
+        height: 30px; /* Reduce logo size for mobile */
+        margin: 0 5px; /* Reduce space between logo and text */
     }
 }
