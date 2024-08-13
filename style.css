@@ -534,32 +534,32 @@ h1 {
 
   
   
-/* Mobile-specific styles */
-@media only screen and (max-width: 600px) {
-    .form-group {
-        padding: 15px;
-    }
+/* Style for the orientation message */
+.orientation-message {
+    display: none; /* Hidden by default */
+    background-color: #ffcc00;
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-    label[for="psychoactive-test"] {
-        font-size: 18px;
-        margin-bottom: 10px;
+/* Show the message when in portrait mode */
+@media only screen and (orientation: portrait) {
+    .orientation-message {
         display: block;
     }
 
-    .radio-group {
-        display: flex;
-        flex-direction: column;
-        gap: 15px; /* Add space between the radio buttons */
-        margin-top: 10px;
-    }
-
-    .radio-group label {
-        font-size: 16px; /* Slightly larger for better readability on mobile */
-        display: flex;
-        align-items: center;
-    }
-
-    .radio-group input[type="radio"] {
-        margin-right: 10px;
+    /* Optional: Hide the rest of the content to emphasize the message */
+    body > *:not(.orientation-message) {
+        display: none;
     }
 }
+
