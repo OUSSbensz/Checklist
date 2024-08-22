@@ -398,17 +398,18 @@ button[type="button"]:hover {
 
 .radio-group {
     display: flex;
-    gap: 10px;
+    gap: 30px; /* Increase the gap between the options */
 }
 
 .radio-group label {
     display: flex;
     align-items: center;
     font-weight: normal;
+    margin-right: 10px; /* Adds space between the text and the radio button */
 }
 
 .radio-group input[type="radio"] {
-    margin-right: 5px;
+    margin-right: 8px; /* Adjust the spacing between the radio button and the label text */
 }
 
 /* Styles for select dropdowns */
@@ -532,11 +533,11 @@ h1 {
   }
 
 
+
   
   
   
 /* Style for the orientation message */
-
 .orientation-message {
     display: none; /* Hidden by default */
     background-color: #ff0044f5;
@@ -565,23 +566,9 @@ h1 {
     }
 }
 
-/* Style pour l'alignement des boutons radio sur mobile */
-@media only screen and (max-width: 600px) {
-    .radio-group {
-        display: flex;
-        flex-direction: column;
-        gap: 10px; /* Espacement entre les boutons radio */
-    }
 
-    /* Alignement des labels */
-    .radio-group label {
-        display: flex;
-        align-items: center;
-    }
 
-    .radio-group input[type="radio"] {
-        margin-right: 8px; /* Espace entre le bouton radio et le label */
-    }
-}
+
+
 
 
