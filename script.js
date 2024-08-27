@@ -116,6 +116,39 @@ window.onload = function () {
         convertPdfBtn.style.display = 'block';
     });
 
+
+// Function to handle image uploads and previews
+function handleImageUploads() {
+    document.querySelectorAll('.options').forEach(function(row) {
+        const cameraIcon = row.querySelector('.camera-icon');
+        const fileInput = row.querySelector('.file-input');
+        const preview = row.querySelector('.preview');
+    
+        // Trigger file input when camera icon is clicked
+        if (cameraIcon) {
+            cameraIcon.addEventListener('click', function() {
+                fileInput.click();
+            });
+        }
+    
+        // Display selected image as preview
+        if (fileInput) {
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    });
+}
+
+    // Function to convert checklist to PDF
     convertPdfBtn.addEventListener('click', () => {
         const pdfContent = checklistContainer;
         const clone = pdfContent.cloneNode(true);
@@ -125,6 +158,18 @@ window.onload = function () {
         const buttons = clone.querySelectorAll('#gather-all, #convert-pdf');
         buttons.forEach(button => {
             button.style.display = 'none';
+        });
+
+        // Hide the camera icon in the PDF
+        const cameraIcons = clone.querySelectorAll('.camera-icon');
+        cameraIcons.forEach(cameraIcon => {
+            cameraIcon.style.display = 'none';
+        });
+
+        // Hide the preview image in the PDF
+        const previewImgs = clone.querySelectorAll('.preview');
+        previewImgs.forEach(previewImg => {
+            previewImg.style.display = 'none';
         });
 
         const items = clone.querySelectorAll('.item');
@@ -182,6 +227,22 @@ window.onload = function () {
 
                 const listItem = document.createElement('li');
                 listItem.textContent = `${itemName} || ${categoryText}`; // Append "CAT" label with hyphen
+
+                // Add image if it exists
+                const itemPreviewImgs = item.querySelectorAll('.preview');
+                itemPreviewImgs.forEach(itemPreviewImg => {
+                    if (itemPreviewImg.src) {
+                        const img = document.createElement('img');
+                        img.src = itemPreviewImg.src;
+                        img.style.maxWidth = '220px'; // Set max width
+                        img.style.maxHeight = '220px'; // Set max height
+                        img.style.width = 'auto'; // Adjust width proportionally
+                        img.style.height = 'auto'; // Adjust height proportionally
+                        img.style.marginTop = '10px';
+                        listItem.appendChild(img);
+                    }
+                });
+
                 findingsList.appendChild(listItem);
             }
         });
@@ -213,8 +274,15 @@ window.onload = function () {
             }
         }
 
-        // Append the cloned checklist and findings section to fullContent
+        // Append the cloned checklist to fullContent
         fullContent.appendChild(clone);
+
+        // Add a smaller page break before the Findings Section
+        const pageBreak = document.createElement('div');
+        pageBreak.classList.add('page-break');
+        fullContent.appendChild(pageBreak);
+
+        // Append the Findings Section to fullContent
         fullContent.appendChild(findingsSection);
 
         // Adjust PDF generation options
@@ -228,7 +296,15 @@ window.onload = function () {
 
         // Generate the PDF with findings section
         html2pdf().set(opt).from(fullContent).save();
-    });
+    });   
+
+
+
+    // Initialize image upload handling
+    handleImageUploads();
+
+
+    /*end*/ 
 
 
     function initCheckboxes() {
@@ -330,7 +406,13 @@ window.onload = function () {
             cat2.addEventListener('change', handleCatCheckboxChange);
             cat3.addEventListener('change', handleCatCheckboxChange);
         });
+
+
+
+
+
     
+
  
 
     displayUserInfo(); // Display user information on page load

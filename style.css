@@ -15,7 +15,7 @@ body {
     padding: 30px 50px; /* Increased padding for more space */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly more shadow for emphasis */
-    width: 1000px; /* Increased width for more space */
+    width: 1100px; /* Increased width for more space */
     text-align: center;
     margin: auto;
 }
@@ -566,9 +566,34 @@ h1 {
     }
 }
 
+/* Camera Icon  */
 
 
+.options .fa-camera {
+    margin-left: 10px;
+    font-size: 18px;
+    color:rgb(0, 149, 255); /* Changez la couleur selon vos besoins */
+    cursor: pointer;
+}
 
 
+#preview {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 120px; /* Limite la largeur de l'image */
+    margin-top: 10px;
+}
+
+
+/* CSS for page breaks */
+.page-break {
+    page-break-before: always;
+    page-break-after: always;
+    margin: 10px 0; /* Adjust margin to add space around the page break */
+    /* Optional: add visual indicators for debugging */
+    border: 1px solid #000; /* Temporary border for visual debugging */
+    height: 1px; /* Minimum height to ensure it creates space */
+}
 
 
