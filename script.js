@@ -409,11 +409,7 @@ function handleImageUploads() {
 
 
 
-
-
-    
-
- 
+     
 
     displayUserInfo(); // Display user information on page load
     showCategory(currentCategoryIndex); // Show the first category initially

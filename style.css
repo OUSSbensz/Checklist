@@ -552,12 +552,22 @@ h1 {
     font-size: 16px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+/* Add an icon before the message text */
+.orientation-message::before {
+    content: "📱"; /* Unicode for mobile phone icon */
+    font-size: 24px;
 }
 
 /* Show the message when in portrait mode */
 @media only screen and (orientation: portrait) {
     .orientation-message {
-        display: block;
+        display: flex; /* Ensure the message is displayed as flex */
     }
 
     /* Optional: Hide the rest of the content to emphasize the message */
@@ -565,6 +575,7 @@ h1 {
         display: none;
     }
 }
+
 
 /* Camera Icon  */
 
